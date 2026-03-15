@@ -1,0 +1,1 @@
+"""Tools usadas pelo agente."""

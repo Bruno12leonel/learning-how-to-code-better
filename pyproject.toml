@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "learning-how-to-code-better"
+version = "0.1.0"
+description = "Projeto educacional para estudar Clean Code, SOLID e Google ADK."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.setuptools]
+packages = ["src", "src.agent", "src.core", "src.tools"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
