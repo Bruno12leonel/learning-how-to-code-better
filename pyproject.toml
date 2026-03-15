@@ -9,7 +9,7 @@ description = "Projeto educacional para estudar Clean Code, SOLID e Google ADK."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "google-adk",
+    "google-adk[a2a]",
 ]
 
 [project.optional-dependencies]
@@ -18,7 +18,14 @@ dev = [
 ]
 
 [tool.setuptools]
-packages = ["src", "src.agent", "src.core", "src.tools"]
+packages = [
+    "src",
+    "src.agent",
+    "src.core",
+    "src.tools",
+    "src.remote_a2a",
+    "src.remote_a2a.study_explainer",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

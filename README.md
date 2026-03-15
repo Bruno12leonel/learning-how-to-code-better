@@ -7,6 +7,7 @@ Projeto educacional para estudar:
 - Python com foco em legibilidade e manutenção
 - Google ADK para construção de agentes
 - A2A como próxima etapa de evolução
+- AgentExecutor como ponte entre protocolo e lógica do agente remoto
 
 ## Objetivo
 
@@ -54,6 +55,14 @@ Por fim, veja como os mesmos princípios aparecem no agente:
 - `src/tools/study_lookup.py`
 - `src/agent/agent.py`
 
+### 4. Fase 2: A2A
+
+Depois avance para:
+
+- `src/core/study_explainer.py`
+- `src/remote_a2a/study_explainer/agent.py`
+- `docs/a2a-quickstart.md`
+
 ## Como Rodar
 
 ### 1. Criar ambiente virtual
@@ -95,6 +104,25 @@ cd src
 adk web --no-reload
 ```
 
+## Rodando A Fase 2
+
+Suba primeiro o agente remoto A2A:
+
+```powershell
+uvicorn src.remote_a2a.study_explainer.agent:app --host localhost --port 8001
+```
+
+Depois, em outro terminal:
+
+```powershell
+cd src
+adk web --no-reload
+```
+
+Guia detalhado:
+
+- `docs/a2a-quickstart.md`
+
 ## Próxima Etapa
 
-A integração A2A ainda não foi implementada no código. O planejamento da fase seguinte está em `docs/a2a-roadmap.md`.
+A base da integração A2A foi implementada no código. O planejamento de evolução continua em `docs/a2a-roadmap.md`.
